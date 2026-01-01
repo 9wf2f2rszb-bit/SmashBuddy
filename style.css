@@ -1,0 +1,359 @@
+/* =========================
+   Base / Reset
+   ========================= */
+
+:root {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 24px;
+  background: #f4f4f6;
+  color: #111;
+
+  display: flex;
+  justify-content: center;
+}
+
+/* =========================
+   Card / Layout
+   ========================= */
+
+.card {
+  max-width: 520px;
+  width: 100%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 28px 22px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================
+   Typography
+   ========================= */
+
+.card h1 {
+  margin: 0 0 12px;
+  font-size: 36px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.card p {
+  margin: 0;
+}
+
+.card p.muted {
+  margin-bottom: 22px;
+  color: #666;
+  font-size: 18px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* =========================
+   Select (Dropdown)
+   ========================= */
+
+select {
+  width: 100%;
+  max-width: 280px;
+  margin: 0 auto;
+
+  display: block;
+
+  padding: 12px 16px;
+  font-size: 18px;
+  font-weight: 600;
+
+  border-radius: 14px;
+  border: 2px solid #c7d2fe;
+  background: #fff;
+
+  text-align: center;
+  text-align-last: center;
+
+  outline: none;
+}
+
+select:focus {
+  border-color: #93c5fd;
+}
+
+/* =========================
+   Result section
+   ========================= */
+
+.result {
+  margin-top: 28px;
+  text-align: center;
+}
+
+#resultTitle {
+  display: none;
+  margin-bottom: 14px;
+  font-size: 28px;
+  font-weight: 800;
+}
+
+/* =========================
+   Pills (type badges)
+   ========================= */
+
+.pillList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.pillList li {
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+
+  background: #111; /* fallback */
+}
+
+/* =========================
+   Footer / Helper text
+   ========================= */
+
+.muted {
+  color: #666;
+}
+
+.small {
+  font-size: 13px;
+}
+
+footer {
+  margin-top: 22px;
+  text-align: center;
+}
+
+/* =========================
+   Pokémon type colors
+   ========================= */
+
+/* Pills */
+.type-fire     { background: #e25822; }
+.type-water    { background: #3b82f6; }
+.type-grass    { background: #22c55e; }
+.type-electric { background: #facc15; color: #111; }
+.type-ice      { background: #7dd3fc; color: #111; }
+.type-fighting { background: #dc2626; }
+.type-poison   { background: #a855f7; }
+.type-ground   { background: #ca8a04; }
+.type-flying   { background: #818cf8; }
+.type-psychic  { background: #db2777; }
+.type-bug      { background: #65a30d; }
+.type-rock     { background: #78716c; }
+.type-ghost    { background: #4c1d95; }
+.type-dragon   { background: #2563eb; }
+.type-dark     { background: #111827; }
+.type-steel    { background: #9ca3af; color: #111; }
+.type-fairy    { background: #f9a8d4; color: #111; }
+.type-normal   { background: #a1a1aa; color: #111; }
+
+.pillList li.type-fire     { background: #e25822; }
+.pillList li.type-water    { background: #3b82f6; }
+.pillList li.type-grass    { background: #22c55e; }
+.pillList li.type-electric { background: #facc15; color: #111; }
+.pillList li.type-ice      { background: #7dd3fc; color: #111; }
+.pillList li.type-fighting { background: #dc2626; }
+.pillList li.type-poison   { background: #a855f7; }
+.pillList li.type-ground   { background: #ca8a04; }
+.pillList li.type-flying   { background: #818cf8; }
+.pillList li.type-psychic  { background: #db2777; }
+.pillList li.type-bug      { background: #65a30d; }
+.pillList li.type-rock     { background: #78716c; }
+.pillList li.type-ghost    { background: #4c1d95; }
+.pillList li.type-dragon   { background: #2563eb; }
+.pillList li.type-dark     { background: #111827; }
+.pillList li.type-steel    { background: #9ca3af; color: #111; }
+.pillList li.type-fairy    { background: #f9a8d4; color: #111; }
+.pillList li.type-normal   { background: #a1a1aa; color: #111; }
+
+/* =========================
+   Body-based type styling
+   (for label / title highlight)
+   ========================= */
+
+label {
+  color: #111;
+}
+
+.selectRow {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+.selectWrap {
+  position: relative;
+  width: 280px; /* matcher max-width på select */
+}
+
+.selectWrap::after {
+  content: "▾";
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: rgba(0,0,0,0.55);
+  font-size: 18px;
+}
+
+
+
+.bucket {
+  margin-top: 18px;
+}
+
+.bucket h3 {
+  margin: 10px 0 10px;
+  font-size: 16px;
+  font-weight: 800;
+  color: rgba(0,0,0,0.7);
+}
+
+.bucket:empty {
+  display: none;
+}
+
+
+.search {
+  margin-bottom: 16px;
+}
+
+.searchRow {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+.searchRow input {
+  width: 280px;
+  max-width: 100%;
+  padding: 12px 14px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 14px;
+  border: 2px solid #e5e7eb;
+  outline: none;
+  text-align: center;
+}
+
+.searchRow input:focus {
+  border-color: #93c5fd;
+}
+
+.searchRow button {
+  padding: 12px 16px;
+  font-size: 16px;
+  font-weight: 800;
+  border-radius: 14px;
+  border: 0;
+  background: #111;
+  color: #fff;
+  cursor: pointer;
+}
+
+.searchRow button:active {
+  transform: translateY(1px);
+}
+
+
+.or-divider {
+  margin: 18px 0;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: #999;
+  text-align: center;
+}
+
+
+/* Autocomplete */
+.suggestions {
+  max-width: 520px;
+  margin: 10px auto 0;
+  text-align: left;
+  display: none;
+  background: #fff;
+  border: 1px solid #e7e7e7;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+
+.suggestion-item {
+  padding: 12px 14px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.suggestion-item strong {
+  font-weight: 800;
+}
+
+.suggestion-item small {
+  color: #888;
+  font-weight: 600;
+}
+
+.suggestion-item:hover,
+.suggestion-item.active {
+  background: #f3f5ff;
+}
+
+.suggestion-empty {
+  padding: 12px 14px;
+  color: #777;
+}
+
+.langToggle{
+  margin: 10px auto 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,.12);
+  background: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.centerHint {
+  text-align: center;
+  margin-top: 10px;
+}

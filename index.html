@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="no">
+<head> 
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Type Guide - SmashBuddy</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <meta name="theme-color" content="#111111" />
+</head>
+
+<body>
+  <main class="card">
+    <h1>SmashBuddy</h1>
+
+    <button id="langToggle" class="langToggle" type="button" aria-label="Bytt språk">
+      NO / EN
+    </button>
+
+    <p id="introText" class="muted">
+      Skriv inn pokémonnavnet eller angrepstypen du skal kjempe mot så får du forslag til supereffektive angrepstyper.
+    </p>
+
+    <!-- Pokémon search -->
+    <section class="search">
+      <label id="pokemonNameLabel" for="pokemonName">Pokémon-navn:</label>
+
+      <div class="searchRow">
+        <input id="pokemonName" type="text" placeholder="f.eks. charizard" autocomplete="off" />
+        <button id="pokemonBtn" type="button">Finn</button>
+      </div>
+
+      <div id="suggestions" class="suggestions" aria-label="Forslag" role="listbox"></div>
+      <p id="pokemonStatus" class="muted small centerHint"></p>
+    </section>
+
+    <!-- OR + dropdowns (midstilt) -->
+    <div class="centerStack">
+      <div id="orDivider" class="orDivider">ELLER</div>
+      <label id="fightLabel" for="defender1">Jeg skal kjempe mot:</label>
+    </div>
+
+    <!-- Type selects -->
+    <div class="selectRow">
+      <div class="selectWrap">
+        <select id="defender1" class="type-select"></select>
+      </div>
+
+      <div class="selectWrap">
+        <select id="defender2" class="type-select"></select>
+      </div>
+    </div>
+
+    <!-- hint under dropdowns -->
+    <p id="type2Hint" class="muted small centerHint">Type 2 er valgfri (dual-type).</p>
+
+    <!-- Results -->
+    <section class="result">
+      <h2 id="resultTitle">Velg en type for å se resultat.</h2>
+
+      <div class="bucket" id="bucket4x">
+        <h3 id="bucketTitle4x">Ekstremt effektivt (4×)</h3>
+        <ul class="pillList" id="list4x"></ul>
+      </div>
+
+      <div class="bucket" id="bucket2x">
+        <h3 id="bucketTitle2x">Supereffektivt (2×)</h3>
+        <ul class="pillList" id="list2x"></ul>
+      </div>
+
+      <div class="bucket" id="bucketHalf">
+        <h3 id="bucketTitleHalf">Lite effektivt (½×)</h3>
+        <ul class="pillList" id="listHalf"></ul>
+      </div>
+
+      <div class="bucket" id="bucketQuarter">
+        <h3 id="bucketTitleQuarter">Veldig lite effektivt (¼×)</h3>
+        <ul class="pillList" id="listQuarter"></ul>
+      </div>
+
+      <div class="bucket" id="bucket0x">
+        <h3 id="bucketTitle0x">Ingen effekt (0×)</h3>
+        <ul class="pillList" id="list0x"></ul>
+      </div>
+    </section>
+
+    <p id="pokemonLoadStatus" class="muted small centerHint"></p>
+
+    <footer id="footerTip" class="muted small">
+      Tips: Legg til på hjemskjerm på iPhone (Del → Legg til på Hjem-skjerm).
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
